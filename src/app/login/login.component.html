@@ -1,3 +1,27 @@
-<p>
-  login works!
-</p>
+﻿
+<div class='row  justify-content-end text-center align-items-center login'>
+    <div class="col-xl-8 col-lg-8 col-md-8 layer-3 aos-init aos-animate borde login color-fondo"> 
+    </div>    
+    <div class="col-xl-4 col-lg-4 col-md-4 layer-3 aos-init aos-animate borde ">
+        <alert></alert>
+        <h1>ALM</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder='Username'/>
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">El Usuario es Obligatorio</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder='Password'/>
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">La Contraseña es Obligatoria</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">Login</button>
+                <p *ngIf="loading"  > Cargando </p>
+            </div>
+        </form>
+    </div>    
+</div>
