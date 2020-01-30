@@ -1,0 +1,19 @@
+<div class="slider-frame" id='{{categoria}}'>
+    <div class="btn prev" id='{{categoria}}-btn-prev'></div>
+    <div class="btn next" id='{{categoria}}-btn-next'></div>
+    <div class="slider-container" id='{{categoria}}container' title="0">
+        <div *ngFor="let movie of movies" class="row slide" >
+            <div class="col-md-5">
+                <img class="img-slide" src="{{movie.cover}}">
+            </div>
+            <div class="col-md-7  descripcion-slide justify-content-end text-center align-items-center ">
+                <h3 class="card-title" >
+                    {{movie.name}}
+                </h3>
+                <span class="display-4 font-weight-bolder">{{movie.score}}</span><br>
+                <span class="text-black-50">de 10</span>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

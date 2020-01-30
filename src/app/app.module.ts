@@ -8,7 +8,8 @@ import { routing }        from './app.routing';
 
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
-import { LoginComponent } from './login';
+import { LoginComponent } from './login';;
+import { SliderComponent } from './slider/slider.component'
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { LoginComponent } from './login';
         AppComponent,
         AlertComponent,
         HomeComponent,
-        LoginComponent    ],
+        LoginComponent ,
+        SliderComponent   ],
     providers: [
     ],
     bootstrap: [AppComponent]
