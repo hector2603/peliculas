@@ -1,0 +1,25 @@
+<div class="rw"><br></div>
+<div class="row  justify-content-end text-center align-items-center ">
+	<div class="col-md-2 offset-md-2 ">
+		<img src="{{pelicula.cover}}" class="img-show-movie">
+	</div>
+	<div class="col-md-7">
+		<h1>{{pelicula.name}}</h1>
+		<span>Genero</span>
+		<h2>{{pelicula.genre}}</h2>
+		<span class="display-4 font-weight-bolder">{{pelicula.score}}</span><br>
+		<br>
+	</div>
+	<div class='col-md-1'>
+		<div class="row">
+			<i class="fa fa-edit fa-5x"></i>
+		</div>
+		<div class="row">
+			<i class="fa fa-trash-o fa-5x"></i>
+		</div>
+	</div>
+</div>
+<h3>Relacionadas</h3>
+<div class="row">
+	<app-slider  categoria="{{pelicula.genre}}" excluir="{{pelicula.id}}" ></app-slider>
+</div>

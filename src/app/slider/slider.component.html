@@ -2,7 +2,7 @@
     <div class="btn prev" id='{{categoria}}-btn-prev'></div>
     <div class="btn next" id='{{categoria}}-btn-next'></div>
     <div class="slider-container" id='{{categoria}}container' title="0">
-        <div *ngFor="let movie of movies" class="row slide" >
+        <div *ngFor="let movie of movies" class="row slide" routerLink="/showMovie/{{movie.id}}" >
             <div class="col-md-5">
                 <img class="img-slide" src="{{movie.cover}}">
             </div>

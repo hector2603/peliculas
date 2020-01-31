@@ -1,3 +1,14 @@
+
+$(document).ready(function() {
+    $("#input-20").fileinput({
+        browseClass: "btn btn-primary btn-block",
+        maxFileCount: 1,
+        dropZoneEnabled: false,
+        allowedFileTypes: ["image"],
+    });
+});
+
+
 var scaling = 1.2;
 //count
 var currentSliderCount = 0;
@@ -131,3 +142,5 @@ function controls( categoria){
         }
     });
 };
+
+

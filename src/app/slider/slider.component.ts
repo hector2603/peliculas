@@ -13,6 +13,7 @@ declare function controls(categoria : string):any ;
 })
 export class SliderComponent implements AfterViewInit , OnInit {
   	@Input() categoria: string;
+    @Input() excluir: string;
   	movies: Movies[] = [];
 
   constructor( 
@@ -20,7 +21,6 @@ export class SliderComponent implements AfterViewInit , OnInit {
   ) { }
 
   ngOnInit(){
-  	//console.log(this.categoria);
   	this.sliderService.getMovies()
   		.pipe(first())
         .subscribe(
@@ -40,11 +40,13 @@ export class SliderComponent implements AfterViewInit , OnInit {
 
   separarPorGenero(peliculas : Movies[], categoria : string){
   	for (var i = peliculas.length - 1; i >= 0; i--) {
-  		var categoriaSlide =  peliculas[i].genre.trim().toUpperCase().replace(" ","-");
-  		if( categoriaSlide === categoria )
-  		{
-  			this.movies.push(peliculas[i]);
-  		}
+      if(peliculas[i].id){
+    		var categoriaSlide =  peliculas[i].genre.trim().toUpperCase().replace(" ","-");
+    		if( categoriaSlide === categoria.trim().toUpperCase().replace(" ","-") && this.excluir !=  peliculas[i].id)
+    		{
+    			this.movies.push(peliculas[i]);
+    		}
+      }
   	}
   	init();
   	setTimeout(() => {init()}, 3000);

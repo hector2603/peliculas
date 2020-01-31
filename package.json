@@ -21,6 +21,7 @@
     "@angular/router": "~7.2.0",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.4.1",
+    "bootstrap-fileinput": "^5.0.8",
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
     "font-awesome": "^4.7.0",

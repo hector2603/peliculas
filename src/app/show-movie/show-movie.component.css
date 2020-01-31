@@ -1,0 +1,25 @@
+.img-show-movie{
+	    width: 100%;
+}
+
+.fa-trash-o{
+	color :red ;
+	transition: opacity .3s, transform .3s;
+}
+
+.fa-trash-o:hover{
+	transform: rotate(360deg) scale(1);
+  	opacity: 1;
+}
+
+
+
+.fa-edit{
+	color :gray ;
+	transition: opacity .3s, transform .3s;
+}
+
+.fa-edit:hover{
+	transform: rotate(360deg) scale(1);
+  	opacity: 1;
+}

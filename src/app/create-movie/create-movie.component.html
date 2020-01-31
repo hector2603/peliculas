@@ -1,0 +1,45 @@
+<div class="row justify-content-center text-center align-items-center">
+	<h1>Agregar Nueva Pelicula</h1>
+</div>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+	<div class="row">
+			<div class = "col-md-4 offset-md-1">
+				<div class="form-group">
+					<label>Portada</label>
+					<div class="file-loading">
+					    <input id="input-20" type="file" (change)="fileProgress($event)" formControlName="cover" [ngClass]="{ 'is-invalid':  submitted && f.cover.errors }">
+					</div>
+				</div>
+		        <div *ngIf=" submitted && f.cover.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f.cover.errors.required">La Imagen es Obligatoria</div>
+                </div>
+			</div>
+			<div class="col-md-3 offset-md-1">
+	            <div class="form-group">
+	            	<label>Nombre</label>
+	                <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid':  submitted && f.name.errors }" placeholder='Nombre'/>
+	                <div *ngIf=" submitted && f.name.errors" class="invalid-feedback">
+	                    <div *ngIf="submitted && f.name.errors.required">El Nombre es Obligatorio</div>
+	                </div>
+	            </div>
+	            <div class="form-group">
+	            	<label>Categoria</label>
+	                <input type="text" formControlName="genre" class="form-control" [ngClass]="{ 'is-invalid':  submitted && f.genre.errors }" placeholder='Categoria'/>
+	                <div *ngIf=" submitted && f.genre.errors" class="invalid-feedback">
+	                    <div *ngIf="submitted && f.genre.errors.required">La Categoria es Obligatoria</div>
+	                </div>
+	            </div>
+	            <div class="form-group">
+		            <label for="customRange3">Calificación</label>
+					<input type="number" formControlName="score" class="form-control" [ngClass]="{ 'is-invalid':  submitted && f.score.errors }" placeholder='Categoria' value = 0 min="0" value="0" step="any">
+					<div *ngIf=" submitted && f.score.errors" class="invalid-feedback">
+	                    <div *ngIf="submitted && f.score.errors.required">La Calificación es Obligatoria</div>
+	                </div>
+	            </div>
+	            <div class="form-group">
+	                <button [disabled]="loading" class="btn btn-primary">Agregar</button>
+	                <p *ngIf="loading"  > Cargando </p>
+	            </div>
+			</div>
+	</div>
+</form>

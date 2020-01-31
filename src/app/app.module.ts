@@ -8,8 +8,11 @@ import { routing }        from './app.routing';
 
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
-import { LoginComponent } from './login';;
-import { SliderComponent } from './slider/slider.component'
+import { LoginComponent } from './login';
+import { SliderComponent } from './slider/slider.component';
+import { ShowMovieComponent } from './show-movie/show-movie.component';
+import { CreateMovieComponent } from './create-movie/create-movie.component';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 @NgModule({
     imports: [
@@ -23,7 +26,10 @@ import { SliderComponent } from './slider/slider.component'
         AlertComponent,
         HomeComponent,
         LoginComponent ,
-        SliderComponent   ],
+        SliderComponent ,
+        ShowMovieComponent ,
+        CreateMovieComponent ,
+        EditMovieComponent],
     providers: [
     ],
     bootstrap: [AppComponent]

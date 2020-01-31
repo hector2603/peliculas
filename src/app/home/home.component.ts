@@ -42,10 +42,14 @@ export class HomeComponent implements OnInit {
 
     generos(peliculas : Movies[]){
         var categoria: string;
+        //console.log(peliculas);
         for (var i = peliculas.length - 1; i >= 0; i--) {
-            categoria =  peliculas[i].genre.trim().toUpperCase().replace(" ","-");
-            if(this.categorias.indexOf(categoria)<0){
-                this.categorias.push(categoria);
+            //console.log(peliculas[i]);
+            if(peliculas[i].id){
+                categoria =  peliculas[i].genre.trim().toUpperCase().replace(" ","-");
+                if(this.categorias.indexOf(categoria)<0){
+                    this.categorias.push(categoria);
+                }
             }
         }
         //console.log(this.categorias);
