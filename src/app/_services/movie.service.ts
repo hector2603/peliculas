@@ -10,6 +10,9 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+	Función para consultar una película en concreto
+  */
   getMovie(id: string){
   	var url = 'api/movies/'+id
 	return this.http.get<any>(url)

@@ -10,18 +10,15 @@ export class createMovieService {
 
   constructor(private http: HttpClient) { }
 
-  	putMovie(
-  			id: string,
-			name: string,
-			genre: string,
-			score: string,
-			cover: string
-  		){
-		return this.http.post<any>('api/movies', {id,name,genre,score,cover})
-            .pipe(map(movie => {
-            	console.log("post");
-            	console.log(movie);
-                return movie;
+    /**
+    Función que consulta la api para crear una nueva película
+    */
+  	putMovie(id: string,name: string, genre: string, score: string, cover: string){
+  		return this.http.post<any>('api/movies', {id,name,genre,score,cover})
+              .pipe(map(movie => {
+              	console.log("post");
+              	console.log(movie);
+                  return movie;
             }));
   }
 }

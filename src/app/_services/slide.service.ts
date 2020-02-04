@@ -10,6 +10,9 @@ export class SlideService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+	función para realizar la consulta de todas las peliculas para después separarlas por categoria
+  */
   getMovies(){
 	return this.http.get<any>(`api/movies`)
 		.pipe(map(movies => movies.map(movies => new Movies().deserialize(movies))));

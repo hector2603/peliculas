@@ -32,16 +32,17 @@ export class CreateMovieComponent implements OnInit {
 
 	// Forma facil de acceder a los campos del formulario
 	get f() { return this.createForm.controls; }
-
+	/**
+		Hace el llamado al servicio de creación de la película
+	*/
 	onSubmit() {
 		const uploadData = new FormData();
-		uploadData.append('id',  'pp2255' );///////////// calcular el ID aleatopriamente 
+		uploadData.append('id',  'pp'+Math.random() );
 		uploadData.append('name',  this.f.name.value );
 		uploadData.append('genre', this.f.genre.value  );
 		uploadData.append('score', this.f.score.value  );
 		uploadData.append('cover', this.fileData );
 		this.submitted = true;
-		//console.log("despues"+this.previewUrl);
 		this.CreateService.putMovie('pp2255',this.f.name.value ,this.f.genre.value,this.f.score.value ,this.previewUrl)            
 			.pipe(first())
             .subscribe(
@@ -55,10 +56,7 @@ export class CreateMovieComponent implements OnInit {
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
-                });;
-		//console.log(this.f.name.value);
-		//console.log(this.f.cover);
-		//console.log(uploadData);
+                });
 	}
 
 	fileProgress(fileInput: any) {

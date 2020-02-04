@@ -38,6 +38,9 @@ export class SliderComponent implements AfterViewInit , OnInit {
     controls(this.categoria);
   }
 
+  /**
+    Separa las peliculas que son del genero que entre en la variable categoria
+  */
   separarPorGenero(peliculas : Movies[], categoria : string){
   	for (var i = peliculas.length - 1; i >= 0; i--) {
       if(peliculas[i].id){

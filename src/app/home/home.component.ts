@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
         .pipe(first())
         .subscribe(
             data => {
-                //console.log(data);
                 this.movies = data;
                 this.generos(data);
             },
@@ -40,11 +39,12 @@ export class HomeComponent implements OnInit {
         init();
     }
 
+    /**
+        Consulta las categorias de las películas que tiene la BD, para mostarlas en la página principal
+    */
     generos(peliculas : Movies[]){
         var categoria: string;
-        //console.log(peliculas);
         for (var i = peliculas.length - 1; i >= 0; i--) {
-            //console.log(peliculas[i]);
             if(peliculas[i].id){
                 categoria =  peliculas[i].genre.trim().toUpperCase().replace(" ","-");
                 if(this.categorias.indexOf(categoria)<0){
@@ -52,7 +52,6 @@ export class HomeComponent implements OnInit {
                 }
             }
         }
-        //console.log(this.categorias);
     }
 
 

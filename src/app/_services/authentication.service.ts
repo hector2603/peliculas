@@ -21,21 +21,23 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
+    /**
+    función que realiza la consulta a la api y recibe la respuesta
+    */ 
     login(username: string, password: string) {
         return this.http.post<any>(`api/user/login`, { username, password })
             .pipe(map(user => {
-                // login successful if there's a jwt token in the response
                 if (user) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     this.currentUserSubject.next(user);
                 }
                 return user;
             }));
     }
-
+    /**
+     función para remover el usuario del local storage para quitar la sesión del cliente.  
+    */
     logout() {
-        // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
     }
