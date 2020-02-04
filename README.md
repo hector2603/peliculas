@@ -15,7 +15,7 @@ Es el componente con el formulario para crear una nueva película.
 Es el componmente con el formulario para editar una película.
 
 
-##Servicios 
+## Servicios 
 
 ### slide Service
 Es el servicio que consulta las películas de la base de datos y las separa por categoria.
@@ -29,10 +29,10 @@ Es el servicio crea una película en la base de datos, con información dada
 ### authentication Service
 Es el encargao de realizar la consulta a la base de datos del usuario y devolver si es efectivo el login
 
-##Modelos
+## Modelos
 
-###Movies 
+### Movies 
 Son los encargados de modelar todos los datos de tipo movies
 
-###User 
+### User 
 es el encargado de almacenar la información del user actual 
